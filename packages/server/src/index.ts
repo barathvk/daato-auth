@@ -39,6 +39,7 @@ export const startServer = async <T>({
     .setTitle(name)
     .setDescription(description)
     .setVersion(version)
+    .addBearerAuth()
     .build()
   app.register(serveStatic, {
     root: path.join(__dirname, '../static'),

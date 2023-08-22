@@ -1,5 +1,5 @@
 {
-  "name": "@api/users",
+  "name": "@api/auth",
   "private": true,
   "version": "0.0.0",
   "main": "src/index.ts",
@@ -9,8 +9,8 @@
   },
   "dependencies": {
     "@nestjs/common": "^10.2.0",
-    "@nestjs/swagger": "^7.1.8",
     "@api/config": "*",
-    "@api/auth": "*"
+    "keycloak-connect": "^22.0.1",
+    "nest-keycloak-connect": "^1.9.2"
   }
 }

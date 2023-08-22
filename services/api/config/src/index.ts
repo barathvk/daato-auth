@@ -11,6 +11,12 @@ class Keycloak {
 
   @IsDefined()
   realm: string
+
+  @IsDefined()
+  clientId: string
+
+  @IsDefined()
+  clientSecret: string
 }
 
 class Database {

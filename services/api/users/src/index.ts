@@ -1,21 +1,23 @@
 import { Controller, Get, Module } from '@nestjs/common'
-import { ApiOkResponse, ApiOperation } from '@nestjs/swagger'
+import { ApiOkResponse, ApiOperation, ApiSecurity } from '@nestjs/swagger'
 
-import { Config, ConfigModule, ConfigService } from '@api/config'
+import { AuthModule, AuthenticatedUser } from '@api/auth'
 
 @Controller('users')
 class UsersController {
-  constructor(private readonly cfg: ConfigService) {}
   @ApiOperation({ summary: 'List users' })
-  @ApiOkResponse({ description: 'List of users', type: Config })
+  @ApiSecurity('bearer')
+  @ApiOkResponse({ description: 'List of users' })
   @Get()
-  async list() {
-    return this.cfg.config
+  async list(@AuthenticatedUser() user: any) {
+    return {
+      message: `hello ${user.preferred_username}!`,
+    }
   }
 }
 
 @Module({
-  imports: [ConfigModule.load()],
+  imports: [AuthModule],
   controllers: [UsersController],
 })
 export class UsersModule {}

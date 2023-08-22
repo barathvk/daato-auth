@@ -1,5 +1,7 @@
 database:
-  url: postgres://postgres:${kube:postgres.daato/postgres-password}@postgres.core:5432/postgres?&sslmode=disable
+  url: postgres://root@db.${env:ORGANIZATION}:26257/postgres?&sslmode=disable
 keycloak:
-  url: http://keycloak-http.auth
-  realm: ${env:ORGANIZATION}
+  url: https://auth.daato.localhost
+  realm: ${kube:daato-api-keycloak-config/realm}
+  clientId: ${kube:daato-api-keycloak-config/clientId}
+  clientSecret: ${kube:daato-api-keycloak-config/clientSecret}
