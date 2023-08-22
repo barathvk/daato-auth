@@ -1,5 +1,5 @@
 {
-  "name": "@core/config",
+  "name": "@api/users",
   "private": true,
   "version": "0.0.0",
   "main": "src/index.ts",
@@ -8,8 +8,8 @@
     "@packages/tsconfig": "*"
   },
   "dependencies": {
-    "@packages/config": "*",
-    "class-validator": "^0.14.0",
-    "class-transformer": "^0.5.1"
+    "@nestjs/common": "^10.2.0",
+    "@nestjs/swagger": "^7.1.8",
+    "@api/config": "*"
   }
 }

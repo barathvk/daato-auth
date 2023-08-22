@@ -73,11 +73,12 @@ db() { :; }
 # @cmd run database migrations
 # @alias m
 # @arg service! service to generate
+# @arg namespace! namespace to use
 # @flag -m --migrate also run the migration
 db::generate() {
   pushd ${SCRIPT_DIR}/services/${argc_service}/model > /dev/null
-  postgres_password=$(kubectl get secret postgres -n ${argc_service} -o json | jq '.data | map_values(@base64d)' | jq -r '."postgres-password"')
-	export DATABASE_URL="postgres://postgres:${postgres_password}@postgres.${argc_service}:5432/postgres?sslmode=disable"
+  postgres_password=$(kubectl get secret postgres -n ${argc_namespace} -o json | jq '.data | map_values(@base64d)' | jq -r '."postgres-password"')
+	export DATABASE_URL="postgres://postgres:${postgres_password}@postgres.${argc_namespace}:5432/postgres?sslmode=disable"
 	rm -rf ./src/model
 	yarn prisma generate
 	yarn eslint --fix ./src/model/dto/**

@@ -3,11 +3,13 @@ import { Module } from '@nestjs/common'
 import { LoggerModule, getLogger } from '@packages/logger'
 import { startServer } from '@packages/server'
 
+import { UsersModule } from '@api/users'
+
 const serviceName = 'Daato Core'
 const loggerName = serviceName.replace(' ', '/').toLowerCase()
 
 @Module({
-  imports: [LoggerModule.create(loggerName)],
+  imports: [LoggerModule.create(loggerName), UsersModule],
 })
 export class AppModule {}
 

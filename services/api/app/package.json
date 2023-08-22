@@ -16,6 +16,7 @@
     "@packages/server": "*",
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.2.0",
-    "@nestjs/common": "^10.2.0"
+    "@nestjs/common": "^10.2.0",
+    "@api/users": "*"
   }
 }

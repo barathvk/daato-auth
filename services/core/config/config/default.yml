@@ -1,1 +1,5 @@
-dbUrl: postgres://postgres:${kube:postgres.core/postgres-password}@postgres.core:5432/postgres?&sslmode=disable
+database:
+  url: postgres://postgres:${kube:postgres.core/postgres-password}@postgres.core:5432/postgres?&sslmode=disable
+keycloak:
+  url: http://keycloak-http.auth
+  realm: core
