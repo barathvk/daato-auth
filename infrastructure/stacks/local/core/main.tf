@@ -11,7 +11,8 @@ module "realm" {
   source = "../../../modules/keycloak/realm"
   name   = local.service_name
 }
-module "postgres" {
-  source    = "../../../modules/postgres/main"
+module "cockroachdb" {
+  source    = "../../../modules/cockroachdb/main"
   namespace = local.namespace
+  name      = "db"
 }

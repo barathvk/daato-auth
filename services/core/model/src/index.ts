@@ -14,7 +14,7 @@ export class ModelService extends PrismaClient implements OnModuleInit {
     super({
       datasources: {
         db: {
-          url: cfg.config.dbUrl,
+          url: cfg.config.database.url,
         },
       },
     })
@@ -24,9 +24,9 @@ export class ModelService extends PrismaClient implements OnModuleInit {
     const { password } = new ConnectionStringParser({
       scheme: 'postgres',
       hosts: [],
-    }).parse(this.cfg.config.dbUrl)
+    }).parse(this.cfg.config.database.url)
     this.logger.log(
-      `🔗 connected to database at ${this.cfg.config.dbUrl.replace(
+      `🔗 connected to database at ${this.cfg.config.database.url.replace(
         password!,
         '****'
       )}`
