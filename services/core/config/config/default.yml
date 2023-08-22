@@ -1,0 +1,1 @@
+dbUrl: postgres://postgres:${kube:postgres.core/postgres-password}@postgres.core:5432/postgres?&sslmode=disable

@@ -1,0 +1,14 @@
+{
+  "name": "@core/config",
+  "private": true,
+  "version": "0.0.0",
+  "main": "src/index.ts",
+  "devDependencies": {
+    "@packages/eslint-config": "*",
+    "@packages/tsconfig": "*"
+  },
+  "dependencies": {
+    "@packages/config": "*",
+    "class-validator": "^0.14.0"
+  }
+}

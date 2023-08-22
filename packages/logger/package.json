@@ -1,0 +1,16 @@
+{
+  "name": "@packages/logger",
+  "version": "0.0.0",
+  "private": true,
+  "main": "src/index.ts",
+  "devDependencies": {
+    "@packages/eslint-config": "*",
+    "@packages/tsconfig": "*"
+  },
+  "dependencies": {
+    "nestjs-pino": "^3.4.0",
+    "pino-http": "^8.4.0",
+    "pino-pretty": "^10.2.0",
+    "pino": "^8.15.0"
+  }
+}

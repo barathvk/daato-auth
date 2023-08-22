@@ -1,0 +1,16 @@
+{
+  "name": "@core/backends",
+  "private": true,
+  "version": "0.0.0",
+  "main": "src/index.ts",
+  "devDependencies": {
+    "@packages/eslint-config": "*",
+    "@packages/tsconfig": "*"
+  },
+  "dependencies": {
+    "@packages/logger": "*",
+    "@core/model": "*",
+    "@nestjs/common": "^10.2.0",
+    "@nestjs/swagger": "^7.1.8"
+  }
+}

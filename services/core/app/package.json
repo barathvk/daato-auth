@@ -1,0 +1,23 @@
+{
+  "name": "@services/core",
+  "private": true,
+  "version": "0.0.0",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "node --watch -r ts-node/register -r tsconfig-paths/register --no-warnings src/index.ts",
+    "serve": "node -r ts-node/register/transpile-only -r tsconfig-aths/register --no-warnings src/index.ts"
+  },
+  "devDependencies": {
+    "@packages/eslint-config": "*",
+    "@packages/tsconfig": "*"
+  },
+  "dependencies": {
+    "@packages/logger": "*",
+    "@packages/server": "*",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.2.0",
+    "@nestjs/common": "^10.2.0",
+    "@core/backends": "*",
+    "@core/model": "*"
+  }
+}

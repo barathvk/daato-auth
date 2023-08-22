@@ -14,5 +14,6 @@ module "tls" {
   domain     = local.domain
 }
 module "keycloak" {
-  source = "../../../modules/keycloak/main"
+  depends_on = [module.base_kubernetes]
+  source     = "../../../modules/keycloak/main"
 }
